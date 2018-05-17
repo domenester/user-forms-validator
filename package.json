@@ -4,7 +4,7 @@
   "description": "A standard user validator",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test ava --serial",
+    "test": "npm run build && NODE_ENV=test ava --serial",
     "babel": "babel-node index.js",
     "clean": "rm -f dist && mkdir dist",
     "build": "babel src --out-dir dist --copy-files",
@@ -32,7 +32,7 @@
   },
   "ava": {
     "files": [
-      "src/signup/*.spec.js"
+      "dist/signup/*.spec.js"
     ],
     "source": [
       "**/*.{js}"

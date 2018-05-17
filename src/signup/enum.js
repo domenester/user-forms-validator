@@ -1,7 +1,8 @@
-const inputData = (label = 'title', type = 'string', field = 'input', required = false) => ({
+const inputData = (label = 'title', type = 'string', field = 'input', key, required = false) => ({
     label,
     type,
     field,
+    key: key || undefined,
     required,
 });
 
@@ -11,19 +12,22 @@ const extraData = (data = { empty: true }) => ({
 
 const userEnum = {
     INPUT_EMAIL: {
-        ...inputData('E-mail', 'string', 'input', true),
+        ...inputData('E-mail', 'string', 'input', 'email', true),
         ...extraData({
             subType: 'email',
         }),
     },
     INPUT_CONFIRM_EMAIL: {
-        ...inputData('Confirmar E-mail', 'string', 'input', true),
+        ...inputData('Confirmar E-mail', 'string', 'input', 'emailConfirm', true),
         ...extraData({
             subType: 'email',
         }),
     },
+    INPUT_USERNAME: {
+        ...inputData('Username', 'string', 'input', 'username', true),
+    },
     INPUT_PASSWORD: {
-        ...inputData('Senha', 'string', 'input', true),
+        ...inputData('Senha', 'string', 'input', 'password', true),
         ...extraData({
             subType: 'password',
             length: {
@@ -33,13 +37,13 @@ const userEnum = {
         }),
     },
     INPUT_CONFIRM_PASSWORD: {
-        ...inputData('Confirmar Senha', 'string', 'input', true),
+        ...inputData('Confirmar Senha', 'string', 'input', 'passwordConfirm', true),
         ...extraData({
             subType: 'password',
         }),
     },
     INPUT_USE_TERM: {
-        ...inputData('Confirmar Senha', 'boolean', 'input', true),
+        ...inputData('Confirmar Senha', 'boolean', 'input', 'term', true),
     },
     INPUT_COUNTRY: {
         ...inputData('País', 'string', 'combobox', false),
@@ -79,7 +83,7 @@ const physicalUserEnum = {
         }),
     },
     INPUT_CPF: {
-        ...inputData('CPF', 'number', 'input', true),
+        ...inputData('CPF', 'number', 'input', 'cpf', true),
         ...extraData({
             subType: 'cpf',
         }),
@@ -89,7 +93,7 @@ const physicalUserEnum = {
 const legalUserEnum = {
     ...userEnum,
     INPUT_CNPJ: {
-        ...inputData('CNPJ', 'number', 'input', true),
+        ...inputData('CNPJ', 'number', 'input', 'cnpj', true),
         ...extraData({
             subType: 'cnpj',
         }),
