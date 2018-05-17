@@ -2,6 +2,7 @@
   "extends": "airbnb",
   "rules": {
     "func-names": ["error", "never"],
-    "linebreak-style": ["error", "windows"]
+    "indent": ["error", 4],
+    "max-len": ["error", { "code": 220 }]
   }
 }
