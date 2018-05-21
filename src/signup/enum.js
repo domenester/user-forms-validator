@@ -59,7 +59,7 @@ const userEnum = {
 const physicalUserEnum = {
     ...userEnum,
     INPUT_NAME: {
-        ...inputData('Nome', 'string', 'input', true),
+        ...inputData('Nome', 'string', 'input', 'name', true),
         ...extraData({
             length: {
                 min: 2,
@@ -68,7 +68,7 @@ const physicalUserEnum = {
         }),
     },
     INPUT_LASTNAME: {
-        ...inputData('Sobrenome', 'string', 'input', true),
+        ...inputData('Sobrenome', 'string', 'input', 'lastName', true),
         ...extraData({
             length: {
                 min: 2,
@@ -77,7 +77,7 @@ const physicalUserEnum = {
         }),
     },
     INPUT_BIRTH: {
-        ...inputData('Data de Nascimento', 'string', 'input', true),
+        ...inputData('Data de Nascimento', 'string', 'input', 'birth', true),
         ...extraData({
             subType: 'birth',
         }),
