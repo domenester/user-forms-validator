@@ -46,13 +46,13 @@ const userEnum = {
         ...inputData('Confirmar Senha', 'boolean', 'input', 'term', true),
     },
     INPUT_COUNTRY: {
-        ...inputData('País', 'string', 'combobox', false),
+        ...inputData('País', 'string', 'combobox', 'country', false),
     },
     INPUT_STATE: {
-        ...inputData('Estado', 'string', 'combobox', true),
+        ...inputData('Estado', 'string', 'combobox', 'state', true),
     },
     INPUT_CITY: {
-        ...inputData('Cidade', 'string', 'combobox', true),
+        ...inputData('Cidade', 'string', 'combobox', 'city', true),
     },
 };
 
