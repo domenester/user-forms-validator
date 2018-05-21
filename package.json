@@ -6,8 +6,8 @@
   "scripts": {
     "test": "npm run build && NODE_ENV=test ava --serial",
     "babel": "babel-node index.js",
-    "clean": "rm -f dist && mkdir dist",
-    "build": "babel src --out-dir dist --copy-files",
+    "clean": "sudo rm -rf dist && mkdir dist",
+    "build": "npm run clean && babel src --out-dir dist --copy-files",
     "babel-debug": "babel-node index.js --debug"
   },
   "author": "Zater",
@@ -32,7 +32,7 @@
   },
   "ava": {
     "files": [
-      "dist/signup/*.spec.js"
+      "dist/**/*.spec.js"
     ],
     "source": [
       "**/*.{js}"

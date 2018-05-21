@@ -1,5 +1,7 @@
 import test from 'ava';
-import SignUpValidation from './validator';
+import signup from './index';
+
+const SignUpValidation = signup.validator;
 
 const signUpValidation = new SignUpValidation();
 

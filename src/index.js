@@ -1,5 +1,3 @@
 import signup from './signup/index';
 
-export {
-    signup
-}
+export default signup;

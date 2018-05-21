@@ -9,4 +9,4 @@ const signup = {
         legalUserEnum
     }
 }
-export { signup };
+export default signup;
