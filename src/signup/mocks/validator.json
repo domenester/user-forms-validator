@@ -1,0 +1,599 @@
+{
+    "shouldPass": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "cpfInvalid": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211826",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "termNotChecked": {
+        "user": {
+            "term": false,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
+    "emailInvalid": {
+        "user": {
+            "term": true,
+            "email": "diogo.domenenetlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
+    "emailConfirmInvalid": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domenew@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
+    "usernameInvalid": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domenew@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
+    "passwordUnder8": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "1234567",
+            "passwordConfirm": "1234567",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
+    "passwordDifferent": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345679",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
+    "cpfOrCnpjEmpty": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
+    "cityEmpty": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "stateEmpty": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "nameEmpty": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": ""
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "lastNameEmpty": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": ""
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "nameLength": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "DiogoDiogoDiogoDiogoDiogoDiogoD"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "lastNameLength": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "DiogoDiogoDiogoDiogoDiogoDiogoD"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        }]        
+    },
+    "birthInvalid": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "invalidDate"
+        }]        
+    },
+    "birthUnder18": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "2001-10-11T03:00:00.000Z"
+        }]        
+    },
+    "shouldPassLegal": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cnpj": "27932182000195",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "RazaoSocial",
+            "value": "Razão Social"
+        },
+        {
+            "label": "NomeFantasia",
+            "value": "Nome Fantasia"
+        }]        
+    },
+    "cnpjInvalid": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cnpj": "27932182000196",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "RazaoSocial",
+            "value": "Razão Sociala"
+        },
+        {
+            "label": "NomeFantasia",
+            "value": "Nome Fantasia"
+        }]        
+    },
+    "socialReasonOver40": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cnpj": "27932182000195",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "RazaoSocial",
+            "value": "Razão SociRazão SociRazão SociRazão Socia"
+        },
+        {
+            "label": "NomeFantasia",
+            "value": "Nome Fantasia"
+        }]        
+    },
+    "socialReasonEmpty": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cnpj": "27932182000195",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "RazaoSocial",
+            "value": ""
+        },
+        {
+            "label": "NomeFantasia",
+            "value": "Nome Fantasia"
+        }]        
+    },
+    "fantasyNameOver40": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cnpj": "27932182000195",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "RazaoSocial",
+            "value": "Razão Social"
+        },
+        {
+            "label": "NomeFantasia",
+            "value": "Razão SociRazão SociRazão SociRazão Socia"
+        }]        
+    },
+    "fantasyNameEmpty": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "12345678",
+            "passwordConfirm": "12345678",
+            "cnpj": "27932182000195",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "RazaoSocial",
+            "value": "Razão Social"
+        },
+        {
+            "label": "NomeFantasia",
+            "value": ""
+        }]        
+    }
+}
