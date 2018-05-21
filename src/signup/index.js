@@ -1,9 +1,12 @@
 import SignUpValidation from './validator';
 import { userEnum, physicalUserEnum, legalUserEnum } from './enum';
 
-export {
-    SignUpValidation,
-    userEnum,
-    physicalUserEnum,
-    legalUserEnum,
-};
+const signup = {
+    validator: SignUpValidation,
+    enums: {
+        userEnum,
+        physicalUserEnum,
+        legalUserEnum
+    }
+}
+export { signup };
