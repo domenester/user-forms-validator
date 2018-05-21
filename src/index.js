@@ -1,3 +1,4 @@
 import signup from './signup/index';
 
-export default signup;
+/* eslint-disable import/prefer-default-export */
+export { signup };

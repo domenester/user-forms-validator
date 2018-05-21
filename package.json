@@ -1,12 +1,12 @@
 {
   "name": "zater-forms-validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A package to validate zater projects input and output",
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run build && NODE_ENV=test ava --serial",
     "babel": "babel-node index.js",
-    "clean": "sudo rm -rf dist && mkdir dist",
+    "clean": "rm -rf dist",
     "build": "npm run clean && babel src --out-dir dist --copy-files",
     "babel-debug": "babel-node index.js --debug"
   },
