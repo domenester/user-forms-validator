@@ -6,7 +6,7 @@ const signup = {
     enums: {
         userEnum,
         physicalUserEnum,
-        legalUserEnum
-    }
-}
+        legalUserEnum,
+    },
+};
 export default signup;
