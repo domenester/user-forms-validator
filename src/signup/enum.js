@@ -1,8 +1,8 @@
-const inputData = (label = 'title', type = 'string', field = 'input', key, required = false) => ({
+const inputData = (label = 'title', type = 'string', field = 'input', key = 'id', required = false) => ({
     label,
     type,
     field,
-    key: key || undefined,
+    key,
     required,
 });
 
