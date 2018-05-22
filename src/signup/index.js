@@ -1,12 +1,8 @@
 import SignUpValidation from './validator';
-import { userEnum, physicalUserEnum, legalUserEnum } from './enum';
+import signUpEnum from './enum';
 
 const signup = {
     validator: SignUpValidation,
-    enums: {
-        userEnum,
-        physicalUserEnum,
-        legalUserEnum,
-    },
+    enums: signUpEnum,
 };
 export default signup;
