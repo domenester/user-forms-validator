@@ -123,4 +123,6 @@ class SignUpValidation {
     }
 }
 
-export default SignUpValidation;
+const signUpValidation = new SignUpValidation();
+
+export default signUpValidation;

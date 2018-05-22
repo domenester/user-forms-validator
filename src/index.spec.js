@@ -2,8 +2,9 @@ import test from 'ava';
 import { signup } from './index';
 
 test('Starting to execute test cases for signup validation', (t) => {
-    t.log(signup.enums.sortByIndex('physicalUserEnum'));
-    t.log(signup.enums.physicalUserEnum);
+    const en = signup.initEnums(['INPUT_COUNTRY']);
+    t.log(en.sortByIndex('physicalUserEnum'));
+    t.log(en.physicalUserEnum);
     t.pass();
 });
 

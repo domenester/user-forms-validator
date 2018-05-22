@@ -1,9 +1,7 @@
 import test from 'ava';
 import signup from './index';
 
-const SignUpValidation = signup.validator;
-
-const signUpValidation = new SignUpValidation();
+const signUpValidation = signup.validator;
 
 const mocks = require('./mocks/validator.json');
 

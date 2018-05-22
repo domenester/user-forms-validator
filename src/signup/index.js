@@ -1,8 +1,8 @@
-import SignUpValidation from './validator';
+import signUpValidation from './validator';
 import signUpEnum from './enum';
 
 const signup = {
-    validator: SignUpValidation,
-    enums: signUpEnum,
+    validator: signUpValidation,
+    initEnums: signUpEnum,
 };
 export default signup;
