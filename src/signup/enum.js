@@ -86,14 +86,14 @@ class SignUpEnum {
                 ...this.inputData('Data de Nascimento', 'text', 'input', 'birth', index++, 'INPUT_BIRTH', true),
                 ...this.extraData({
                     subType: 'birth',
-                    mask: 'ui-date-mask="DD/MM/YYYY"',
+                    mask: '[/\\d/, /\\d/, \'/\', /\\d/, /\\d/, \'/\', /\\d/, /\\d/, /\\d/, /\\d/]',
                 }),
             },
             INPUT_CPF: {
                 ...this.inputData('CPF', 'text', 'input', 'cpf', index++, 'INPUT_CPF', true),
                 ...this.extraData({
                     subType: 'cpf',
-                    mask: 'ui-br-cpf-mask',
+                    mask: '[/\\d/, /\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/]',
                 }),
             },
             ...this.generateUserEnum(index++),
@@ -117,9 +117,10 @@ class SignUpEnum {
                 }),
             },
             INPUT_CNPJ: {
-                ...this.inputData('CNPJ', 'number', 'input', 'cnpj', index++, 'INPUT_CNPJ', true),
+                ...this.inputData('CNPJ', 'text', 'input', 'cnpj', index++, 'INPUT_CNPJ', true),
                 ...this.extraData({
                     subType: 'cnpj',
+                    mask: '[/\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'/\', /\\d/, /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/]',
                 }),
             },
             ...this.generateUserEnum(index++),

@@ -58,7 +58,7 @@ test('should throw error when email and username is different', (t) => {
 
 test('should throw error when password length is under 8', (t) => {
     const body = mocks.passwordUnder8;
-    return signUpTester.shouldThrowError(t, body, 'O campo password precisa ter acima de 7 caracteres!');
+    return signUpTester.shouldThrowError(t, body, 'O campo password precisa ter acima de 7 caracteres, 1 caractere maiúsculo, 1 caractere especial.');
 });
 
 test('should throw error when password confirm is different', (t) => {

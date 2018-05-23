@@ -25,11 +25,10 @@ class SignUpValidation {
                     err[0].message = 'Username e email devem ser iguais!';
                     return err;
                 }),
-            password: Joi.string().min(8).max(30).required()
-                .error((err) => {
-                    err[0].message = 'O campo password precisa ter acima de 7 caracteres!';
-                    return err;
-                }),
+            password: Joi.string().regex(/^(?:(?=.*[a-z])([^A-Za-z0-9])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,10}$/).error((err) => {
+                err[0].message = 'O campo password precisa ter acima de 7 caracteres, 1 caractere maiúsculo, 1 caractere especial.';
+                return err;
+            }),
             passwordConfirm: Joi.string().valid(Joi.ref('password')).required()
                 .error((err) => {
                     err[0].message = 'As senhas não conferem';
