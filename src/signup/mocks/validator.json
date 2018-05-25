@@ -16,7 +16,15 @@
         },
         {
             "label": "Estado",
-            "value": "São Paulo"
+            "value": "SP"
+        },
+        {
+            "label": "País",
+            "value": "Brasil"
+        },
+        {
+            "label": "CEP",
+            "value": "06709240"
         },
         {
             "label": "Nome",
@@ -446,6 +454,10 @@
         {
             "label": "Estado",
             "value": "São Paulo"
+        },
+        {
+            "label": "CEP",
+            "value": "06709240"
         },
         {
             "label": "RazaoSocial",

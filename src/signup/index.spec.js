@@ -13,8 +13,8 @@ class SignUpValidationTester {
                 t.log(err);
                 t.fail();
             } else {
-                t.deepEqual(err.details[0].message, message);
                 t.log(err.details[0].message);
+                t.deepEqual(err.details[0].message, message);
             }
         });
     }

@@ -42,78 +42,90 @@ class SignUpValidation {
                 err[0].message = 'Preencha o campo CPF ou CNPJ';
                 return err;
             });
-
-        this.profileSchema = Joi.array().min(5).unique().items(Joi.object().keys({
-            label: Joi.string().required().valid('Cidade', 'Estado', 'Nome', 'Sobrenome', 'Data de Nascimento'),
-            value: Joi.required().when('label', {
-                is: 'Data de Nascimento',
-                then: Joi.date().iso().required().max(moment().add(-18, 'years').format('MM-DD-YYYY'))
-                    .error((err) => {
-                        if (err[0].type === 'date.max') err[0].message = 'Para finalizar uma conta na Zater você precisa ser maior de idade!';
-                        else if (err[0].type === 'date.isoDate') err[0].message = 'Data de Nascimento inválida';
-                        return err;
-                    }),
-            }).when('label', {
+        // 'type' param, must be 'physical' or 'legal'
+        this.profileByUserType = (type) => {
+            let labels = ['Cidade', 'Estado', 'CEP'];
+            let values = Joi.required().when('label', {
                 is: 'Cidade',
                 then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Cidade'; return err; }),
             }).when('label', {
                 is: 'Estado',
                 then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Estado'; return err; }),
-            })
-                .when('label', {
+            }).when('label', {
+                is: 'CEP',
+                then: Joi.string().max(8).min(8).required()
+                    .error((err) => { err[0].message = 'Preencha o campo CEP'; return err; }),
+            });
+
+            if (type === 'physical') {
+                labels = [...labels, 'Nome', 'Sobrenome', 'Data de Nascimento', 'País'];
+                values = values.when('label', {
+                    is: 'Data de Nascimento',
+                    then: Joi.date().iso().required().max(moment().add(-18, 'years').format('MM-DD-YYYY'))
+                        .error((err) => {
+                            if (err[0].type === 'date.max') err[0].message = 'Para finalizar uma conta na Zater você precisa ser maior de idade!';
+                            else if (err[0].type === 'date.isoDate') err[0].message = 'Data de Nascimento inválida';
+                            return err;
+                        }),
+                }).when('label', {
                     is: 'Nome',
                     then: Joi.string().required().max(30).error((err) => {
                         if (err[0].type === 'string.max') err[0].message = 'O campo nome precisa ter no máximo 30 caracteres!!';
                         else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Nome';
                         return err;
                     }),
-                })
-                .when('label', {
+                }).when('label', {
                     is: 'Sobrenome',
                     then: Joi.string().required().max(30).error((err) => {
                         if (err[0].type === 'string.max') err[0].message = 'O campo Sobrenome precisa ter no máximo 30 caracteres!!';
                         else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Sobrenome';
                         return err;
                     }),
-                }),
-        }));
+                }).when('label', {
+                    is: 'País',
+                    then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo País'; return err; }),
+                });
+            }
 
-        this.profileLegalSchema = Joi.array().min(4).unique().items(Joi.object().keys({
-            label: Joi.string().required().valid('Cidade', 'Estado', 'RazaoSocial', 'NomeFantasia'),
-            value: Joi.required().when('label', {
-                is: 'Cidade',
-                then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Cidade'; return err; }),
-            }).when('label', {
-                is: 'Estado',
-                then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Estado'; return err; }),
-            }).when('label', {
-                is: 'RazaoSocial',
-                then: Joi.string().required().max(40).error((err) => {
-                    if (err[0].type === 'string.max') err[0].message = 'O campo Razão Social precisa ter no máximo 40 caracteres!';
-                    else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Razão Social';
-                    return err;
-                }),
-            })
-                .when('label', {
+            if (type === 'legal') {
+                labels = [...labels, 'RazaoSocial', 'NomeFantasia'];
+                values = values.when('label', {
+                    is: 'RazaoSocial',
+                    then: Joi.string().required().max(40).error((err) => {
+                        if (err[0].type === 'string.max') err[0].message = 'O campo Razão Social precisa ter no máximo 40 caracteres!';
+                        else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Razão Social';
+                        return err;
+                    }),
+                }).when('label', {
                     is: 'NomeFantasia',
                     then: Joi.string().required().max(40).error((err) => {
                         if (err[0].type === 'string.max') err[0].message = 'O campo Nome Fantasia precisa ter no máximo 40 caracteres!';
                         else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Nome Fantasia';
                         return err;
                     }),
-                }),
-        }));
+                });
+            }
+
+            return Joi.array().min(labels.length).unique().items(Joi.object().keys({
+                label: Joi.string().required().valid(labels),
+                value: values,
+            }));
+        };
     }
 
     validateUser(obj, cb, _this) {
         return Joi.validate(obj, this ? this.userSchema : _this.userSchema, (err, value) => cb(err, value));
     }
-    validateProfile(obj, cb, _this) { return Joi.validate(obj, this ? this.profileSchema : _this.profileSchema, (err, value) => cb(err, value)); }
-    validateLegalProfile(obj, cb, _this) { return Joi.validate(obj, this ? this.profileLegalSchema : _this.profileLegalSchema, (err, value) => cb(err, value)); }
+    validatePhysicalProfile(obj, cb, _this) {
+        return Joi.validate(obj, this ? this.profileByUserType('physical') : _this.profileByUserType('physical'), (err, value) => cb(err, value));
+    }
+    validateLegalProfile(obj, cb, _this) {
+        return Joi.validate(obj, this ? this.profileByUserType('legal') : _this.profileByUserType('legal'), (err, value) => cb(err, value));
+    }
     validateUserAndProfile(obj, cb) {
         return this.validateUser(obj.user, (err, user) => {
             if (err) return cb(err);
-            const profileValidator = user.cnpj ? this.validateLegalProfile : this.validateProfile;
+            const profileValidator = user.cnpj ? this.validateLegalProfile : this.validatePhysicalProfile;
             return profileValidator(obj.profile, (erro) => {
                 if (erro) return cb(erro);
                 return cb(erro, obj);
