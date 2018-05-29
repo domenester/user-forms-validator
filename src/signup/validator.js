@@ -25,8 +25,8 @@ class SignUpValidation {
                     err[0].message = 'Username e email devem ser iguais!';
                     return err;
                 }),
-            password: Joi.string().regex(/^(?:(?=.*[a-z])([^A-Za-z0-9])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,10}$/).error((err) => {
-                err[0].message = 'O campo password precisa ter acima de 7 caracteres, 1 caractere maiúsculo, 1 caractere especial.';
+            password: Joi.string().regex(/^(?:(?=.*[a-z])([^A-Za-z0-9])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,16}$/).error((err) => {
+                err[0].message = 'O campo senha precisa ter entre 8 a 16 caracteres, 1 caractere maiúsculo, 1 caractere especial e 1 número.';
                 return err;
             }),
             passwordConfirm: Joi.string().valid(Joi.ref('password')).required()
