@@ -63,7 +63,7 @@ class SignUpValidation {
                     is: 'Data de Nascimento',
                     then: Joi.date().iso().required().max(moment().add(-18, 'years').format('MM-DD-YYYY'))
                         .error((err) => {
-                            if (err[0].type === 'date.max') err[0].message = 'Para finalizar uma conta na Zater você precisa ser maior de idade!';
+                            if (err[0].type === 'date.max') err[0].message = 'Idade não permitida para cadastro de conta.';
                             else if (err[0].type === 'date.isoDate') err[0].message = 'Data de Nascimento inválida';
                             return err;
                         }),

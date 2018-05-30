@@ -108,7 +108,7 @@ test('should throw error when birth date is invalid', (t) => {
 
 test('should throw error when birth date is under 18', (t) => {
     const body = mocks.birthUnder18;
-    return signUpTester.shouldThrowError(t, body, 'Para finalizar uma conta na Zater você precisa ser maior de idade!');
+    return signUpTester.shouldThrowError(t, body, 'Idade não permitida para cadastro de conta.');
 });
 
 test('should accept legal person for signup', (t) => {
