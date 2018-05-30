@@ -44,8 +44,9 @@ class SignUpValidation {
             });
         // 'type' param, must be 'physical' or 'legal'
         this.profileByUserType = (type) => {
-            let labels = ['Cidade', 'Estado', 'CEP'];
-            let values = Joi.required().when('label', {
+            let labels = ['Cidade', 'Estado', 'CEP', 'Endereço'];
+            let values = Joi.required()
+            .when('label', {
                 is: 'Cidade',
                 then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Cidade'; return err; }),
             }).when('label', {
@@ -55,6 +56,10 @@ class SignUpValidation {
                 is: 'CEP',
                 then: Joi.string().max(8).min(8).required()
                     .error((err) => { err[0].message = 'Preencha o campo CEP'; return err; }),
+            }).when('label', {
+                is: 'Endereço',
+                then: Joi.string().max(150).min(2)
+                    .error((err) => { err[0].message = 'Endereço invalido, maxímo 150 caracteres!'; return err; }),
             });
 
             if (type === 'physical') {

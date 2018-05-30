@@ -27,6 +27,10 @@
             "value": "06709240"
         },
         {
+            "label": "Endereço",
+            "value": "Av paulista 2001"
+        },
+        {
             "label": "Nome",
             "value": "Diogo"
         },
@@ -458,6 +462,10 @@
         {
             "label": "CEP",
             "value": "06709240"
+        },
+        {
+            "label": "Endereço",
+            "value": "Av paulista 2001"
         },
         {
             "label": "RazaoSocial",
