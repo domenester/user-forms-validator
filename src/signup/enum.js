@@ -52,14 +52,27 @@ class SignUpEnum {
             INPUT_USE_TERM: {
                 ...this.inputData('Confirmar Senha', 'boolean', 'input', 'term', index++, 'INPUT_USE_TERM', true),
             },
-            INPUT_COUNTRY: {
-                ...this.inputData('País', 'text', 'combobox', 'country', index++, 'INPUT_COUNTRY', false),
-            },
             INPUT_STATE: {
                 ...this.inputData('Estado', 'text', 'combobox', 'state', index++, 'INPUT_STATE', true),
             },
             INPUT_CITY: {
                 ...this.inputData('Cidade', 'text', 'combobox', 'city', index++, 'INPUT_CITY', true),
+            },
+            INPUT_CEP: {
+                ...this.inputData('CEP', 'text', 'input', 'cep', index++, 'INPUT_CEP', true),
+                ...this.extraData({
+                    subType: 'cep',
+                    mask: '[/\\d/, /\\d/, /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/, /\\d/]',
+                }),
+            },
+            INPUT_ADDRESS: {
+                ...this.inputData('Endereço', 'text', 'input', 'address', index++, 'INPUT_ADDRESS', true),
+                ...this.extraData({
+                    length: {
+                        min: 2,
+                        max: 150,
+                    },
+                }),
             },
         });
 
@@ -95,6 +108,9 @@ class SignUpEnum {
                     subType: 'cpf',
                     mask: '[/\\d/, /\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/]',
                 }),
+            },
+            INPUT_COUNTRY: {
+                ...this.inputData('País', 'text', 'input', 'country', index++, 'INPUT_COUNTRY', false),
             },
             ...this.generateUserEnum(index++),
         }))(0);

@@ -46,21 +46,30 @@ class SignUpValidation {
         this.profileByUserType = (type) => {
             let labels = ['Cidade', 'Estado', 'CEP', 'Endereço'];
             let values = Joi.required()
-            .when('label', {
-                is: 'Cidade',
-                then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Cidade'; return err; }),
-            }).when('label', {
-                is: 'Estado',
-                then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Estado'; return err; }),
-            }).when('label', {
-                is: 'CEP',
-                then: Joi.string().max(8).min(8).required()
-                    .error((err) => { err[0].message = 'Preencha o campo CEP'; return err; }),
-            }).when('label', {
-                is: 'Endereço',
-                then: Joi.string().max(150).min(2)
-                    .error((err) => { err[0].message = 'Endereço invalido, maxímo 150 caracteres!'; return err; }),
-            });
+                .when('label', {
+                    is: 'Cidade',
+                    then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Cidade'; return err; }),
+                }).when('label', {
+                    is: 'Estado',
+                    then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Estado'; return err; }),
+                }).when('label', {
+                    is: 'CEP',
+                    then: Joi.string().max(8).min(8).required()
+                        .error((err) => {
+                            if (err[0].type === 'string.max' || err[0].type === 'string.min') err[0].message = 'CEP deve conter 8 dígitos.';
+                            else err[0].message = 'Preencha o campo CEP';
+                            return err;
+                        }),
+                })
+                .when('label', {
+                    is: 'Endereço',
+                    then: Joi.string().max(150).min(2)
+                        .error((err) => {
+                            if (err[0].type === 'string.max') err[0].message = 'Endereço invalido, maxímo 150 caracteres!';
+                            if (err[0].type === 'string.min') err[0].message = 'Endereço invalido, mínimo de 2 caracteres!';
+                            return err;
+                        }),
+                });
 
             if (type === 'physical') {
                 labels = [...labels, 'Nome', 'Sobrenome', 'Data de Nascimento', 'País'];
