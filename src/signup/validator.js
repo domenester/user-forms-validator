@@ -57,7 +57,7 @@ class SignUpValidation {
                     then: Joi.string().max(8).min(8).required()
                         .error((err) => {
                             if (err[0].type === 'string.max' || err[0].type === 'string.min') err[0].message = 'CEP deve conter 8 dígitos.';
-                            else err[0].message = 'Preencha o campo CEP';
+                            else err[0].message = 'Preencha o CEP com valor válido';
                             return err;
                         }),
                 })
