@@ -202,7 +202,19 @@
         },
         {
             "label": "Estado",
-            "value": "São Paulo"
+            "value": "SP"
+        },
+        {
+            "label": "País",
+            "value": "Brasil"
+        },
+        {
+            "label": "CEP",
+            "value": "06709240"
+        },
+        {
+            "label": "Endereço",
+            "value": "Av paulista 2001"
         },
         {
             "label": "Nome",

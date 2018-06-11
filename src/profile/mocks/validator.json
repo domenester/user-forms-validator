@@ -1,0 +1,106 @@
+{
+    "physical": {
+        "shouldPass": [{
+            "label": "Nome",
+            "value": "Diogo"
+        },
+        {
+            "label": "Sobrenome",
+            "value": "Domene"
+        },
+        {
+            "label": "Celular",
+            "value": "11997953111"
+        },
+        {
+            "label": "Estado civil",
+            "value": "Solteiro(a)"
+        },
+        {
+            "label": "Data de Nascimento",
+            "value": "1992-10-11T03:00:00.000Z"
+        },
+        {
+            "label": "Profissão",
+            "value": "Desenvolvedor"
+        },
+        {
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "País",
+            "value": "Brasil"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "CEP",
+            "value": "06709240"
+        },
+        {
+            "label": "Endereço",
+            "value": "Estrada do Layher"
+        },
+        {
+            "label": "Complemento",
+            "value": "Casa"
+        },
+        {
+            "label": "Número do comprovante IR",
+            "value": "3216549876543216"
+        },
+        {
+            "label": "RG",
+            "value": "37879193x"
+        },
+        {
+            "label": "RG Emissão",
+            "value": "SSP"
+        },
+        {
+            "label": "Comp. de Residência",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        },
+        {
+            "label": "Documento (frontal)",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        },
+        {
+            "label": "Documento (verso)",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        },
+        {
+            "label": "Selfie com doc. aberto",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        }]
+    },
+    "legal": {
+        "shouldPass": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        },
+        {
+            "label": "Estado",
+            "value": "São Paulo"
+        },
+        {
+            "label": "CEP",
+            "value": "06709240"
+        },
+        {
+            "label": "Endereço",
+            "value": "Av paulista 2001"
+        },
+        {
+            "label": "RazaoSocial",
+            "value": "Razão Social"
+        },
+        {
+            "label": "NomeFantasia",
+            "value": "Nome Fantasia"
+        }]
+    }
+}
