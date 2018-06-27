@@ -17,7 +17,6 @@ class SignUpEnum {
         /* eslint-disable no-plusplus */
         /* eslint-disable no-param-reassign */
         this.generateUserEnum = index => ({
-
             INPUT_EMAIL: {
                 ...this.inputData('E-mail', 'text', 'input', 'email', index++, 'INPUT_EMAIL', true),
                 ...this.extraData({
@@ -49,8 +48,17 @@ class SignUpEnum {
                     subType: 'password',
                 }),
             },
-            INPUT_USE_TERM: {
-                ...this.inputData('Confirmar Senha', 'boolean', 'input', 'term', index++, 'INPUT_USE_TERM', true),
+            INPUT_DOC_FRONTAL: {
+                ...this.inputData('Documento (Frontal)', 'file', 'input', 'documento-fontal', index++, 'INPUT_DOC_FRONTAL', true),
+            },
+            INPUT_DOC_VERSO: {
+                ...this.inputData('Documento (Verso)', 'file', 'input', 'documento-verso', index++, 'INPUT_DOC_VERSO', true),
+            },
+            INPUT_DOC_COMPROVANTE_RESIDENCIA: {
+                ...this.inputData('Comprovante de Residência', 'file', 'input', 'documento-comprovante-residencia', index++, 'INPUT_DOC_COMPROVANTE_RESIDENCIA', true),
+            },
+            INPUT_DOC_SELFIE_ABERTA: {
+                ...this.inputData('Selfie com Documento Aberto', 'file', 'input', 'documento-selfie-aberta', index++, 'INPUT_DOC_SELFIE_ABERTA', true),
             },
             INPUT_COUNTRY: {
                 ...this.inputData('País', 'text', 'combobox', 'country', index++, 'INPUT_COUNTRY', false),
@@ -60,6 +68,9 @@ class SignUpEnum {
             },
             INPUT_CITY: {
                 ...this.inputData('Cidade', 'text', 'combobox', 'city', index++, 'INPUT_CITY', true),
+            },
+            INPUT_DOC_: {
+                ...this.inputData('DOC', 'file', 'input', 'doc', index++, 'INPUT_DOC', true),
             },
         });
 
