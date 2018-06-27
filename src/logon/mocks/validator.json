@@ -1,0 +1,29 @@
+{
+    "shouldPassWithToken": {
+        "email": "emailmock@mock.com",
+        "password": "Anypassword*8",
+        "token": "023456"
+    },
+    "shouldPassWithoutToken": {
+        "email": "emailmock@mock.com",
+        "password": "Anypassword*8"
+    },
+    "invalidEmail": {
+        "email": "emailmockmock.com",
+        "password": "Anypassword*8"
+    },
+    "invalidPassword": {
+        "email": "emailmock@mock.com",
+        "password": "Anypassword"
+    },
+    "invalidTokenHighLength": {
+        "email": "emailmock@mock.com",
+        "password": "Anypassword*8",
+        "token": "1234567"
+    },
+    "invalidTokenLowLength": {
+        "email": "emailmock@mock.com",
+        "password": "Anypassword*8",
+        "token": "12345"
+    }
+}

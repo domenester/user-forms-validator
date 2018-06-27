@@ -1,8 +1,8 @@
 /* eslint no-param-reassign: "error" */
 
 import Joi from 'joi';
-import moment from 'moment';
 import DocumentValidation from './helper/joi-custom/cpfcnpj';
+import Profile from '../profile/profile-fields';
 
 class SignUpValidation {
     constructor() {
@@ -44,75 +44,23 @@ class SignUpValidation {
             });
         // 'type' param, must be 'physical' or 'legal'
         this.profileByUserType = (type) => {
-            let labels = ['Cidade', 'Estado', 'CEP', 'Endereço'];
-            let values = Joi.required()
-            .when('label', {
-                is: 'Cidade',
-                then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Cidade'; return err; }),
-            }).when('label', {
-                is: 'Estado',
-                then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Estado'; return err; }),
-            }).when('label', {
-                is: 'CEP',
-                then: Joi.string().max(8).min(8).required()
-                    .error((err) => { err[0].message = 'Preencha o campo CEP'; return err; }),
-            }).when('label', {
-                is: 'Endereço',
-                then: Joi.string().max(150).min(2)
-                    .error((err) => { err[0].message = 'Endereço invalido, maxímo 150 caracteres!'; return err; }),
-            });
+            if (type !== 'physical' && type !== 'legal') throw new Error('type must be "physical" or "legal"');
+
+            let labels = ['city', 'state', 'cep', 'address'];
+            let values;
 
             if (type === 'physical') {
-                labels = [...labels, 'Nome', 'Sobrenome', 'Data de Nascimento', 'País'];
-                values = values.when('label', {
-                    is: 'Data de Nascimento',
-                    then: Joi.date().iso().required().max(moment().add(-18, 'years').format('MM-DD-YYYY'))
-                        .error((err) => {
-                            if (err[0].type === 'date.max') err[0].message = 'Idade não permitida para cadastro de conta.';
-                            else if (err[0].type === 'date.isoDate') err[0].message = 'Data de Nascimento inválida';
-                            return err;
-                        }),
-                }).when('label', {
-                    is: 'Nome',
-                    then: Joi.string().required().max(30).error((err) => {
-                        if (err[0].type === 'string.max') err[0].message = 'O campo nome precisa ter no máximo 30 caracteres!!';
-                        else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Nome';
-                        return err;
-                    }),
-                }).when('label', {
-                    is: 'Sobrenome',
-                    then: Joi.string().required().max(30).error((err) => {
-                        if (err[0].type === 'string.max') err[0].message = 'O campo Sobrenome precisa ter no máximo 30 caracteres!!';
-                        else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Sobrenome';
-                        return err;
-                    }),
-                }).when('label', {
-                    is: 'País',
-                    then: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo País'; return err; }),
-                });
+                labels = [...labels, 'name', 'lastName', 'country', 'birth'];
+                values = Profile.getValuesByLabels(Joi.required(), labels);
             }
 
             if (type === 'legal') {
-                labels = [...labels, 'RazaoSocial', 'NomeFantasia'];
-                values = values.when('label', {
-                    is: 'RazaoSocial',
-                    then: Joi.string().required().max(40).error((err) => {
-                        if (err[0].type === 'string.max') err[0].message = 'O campo Razão Social precisa ter no máximo 40 caracteres!';
-                        else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Razão Social';
-                        return err;
-                    }),
-                }).when('label', {
-                    is: 'NomeFantasia',
-                    then: Joi.string().required().max(40).error((err) => {
-                        if (err[0].type === 'string.max') err[0].message = 'O campo Nome Fantasia precisa ter no máximo 40 caracteres!';
-                        else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Nome Fantasia';
-                        return err;
-                    }),
-                });
+                labels = [...labels, 'socialReason', 'fantasyName'];
+                values = Profile.getValuesByLabels(Joi.required(), labels);
             }
 
             return Joi.array().min(labels.length).unique().items(Joi.object().keys({
-                label: Joi.string().required().valid(labels),
+                label: Joi.string().required().valid(Profile.getLabelsNameByKey(labels)),
                 value: values,
             }));
         };
