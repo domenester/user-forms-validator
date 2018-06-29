@@ -4,23 +4,26 @@ import Joi from 'joi';
 import Profile from '../profile/profile-fields';
 import userValidation from '../user/user-validation';
 
-class SignUpValidation {
+class AdminCreateUserValidation {
     constructor() {
         this.userSchema = userValidation;
         // 'type' param, must be 'physical' or 'legal'
         this.profileByUserType = (type) => {
             if (type !== 'physical' && type !== 'legal') throw new Error('type must be "physical" or "legal"');
 
-            let labels = ['city', 'state', 'cep', 'address'];
+            let labels = ['city', 'state', 'cep', 'address', 'addressComplement'];
             let values;
 
             if (type === 'physical') {
-                labels = [...labels, 'name', 'lastName', 'country', 'birth'];
+                labels = [...labels, 'name', 'lastName', 'birth', 'rgFront', 'rgBack', 'proofOfResidence', 'selfie', 'country', 'cellphone', 'rg', 'rgEmission', 'martialStatus', 'occupation', 'incomeTax'];
                 values = Profile.getValuesByLabels(Joi.required(), labels);
             }
 
             if (type === 'legal') {
-                labels = [...labels, 'socialReason', 'fantasyName'];
+                /* eslint-disable max-len */
+                const partnerLabels = ['cpfPartner', 'cityPartner', 'statePartner', 'cepPartner', 'addressPartner', 'namePartner', 'lastNamePartner', 'birthPartner', 'rgFrontPartner', 'rgBackPartner', 'selfiePartner', 'addressComplementPartner', 'cellphonePartner', 'rgPartner', 'rgEmissionPartner', 'martialStatusPartner', 'occupationPartner', 'socialContractPartner', 'contractLastChangePartner', 'emailPartner'];
+                const contactLabels = ['contactName', 'contactEmail', 'contactPhone'];
+                labels = [...labels, 'socialReason', 'fantasyName', ...partnerLabels, ...contactLabels];
                 values = Profile.getValuesByLabels(Joi.required(), labels);
             }
 
@@ -52,6 +55,6 @@ class SignUpValidation {
     }
 }
 
-const signUpValidation = new SignUpValidation();
+const adminCreateUserValidation = new AdminCreateUserValidation();
 
-export default signUpValidation;
+export default adminCreateUserValidation;

@@ -48,18 +48,6 @@ class SignUpEnum {
                     subType: 'password',
                 }),
             },
-            INPUT_DOC_FRONTAL: {
-                ...this.inputData('Documento (Frontal)', 'file', 'input', 'documento-fontal', index++, 'INPUT_DOC_FRONTAL', true),
-            },
-            INPUT_DOC_VERSO: {
-                ...this.inputData('Documento (Verso)', 'file', 'input', 'documento-verso', index++, 'INPUT_DOC_VERSO', true),
-            },
-            INPUT_DOC_COMPROVANTE_RESIDENCIA: {
-                ...this.inputData('Comprovante de Residência', 'file', 'input', 'documento-comprovante-residencia', index++, 'INPUT_DOC_COMPROVANTE_RESIDENCIA', true),
-            },
-            INPUT_DOC_SELFIE_ABERTA: {
-                ...this.inputData('Selfie com Documento Aberto', 'file', 'input', 'documento-selfie-aberta', index++, 'INPUT_DOC_SELFIE_ABERTA', true),
-            },
             INPUT_STATE: {
                 ...this.inputData('Estado', 'text', 'combobox', 'state', index++, 'INPUT_STATE', true),
             },

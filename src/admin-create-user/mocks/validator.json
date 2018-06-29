@@ -1,0 +1,107 @@
+{
+  "natural": {
+      "shouldPass": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "Pcldmf8*",
+            "passwordConfirm": "Pcldmf8*",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{ "label": "Nome", "value": "Diogo" },
+        { "label": "Sobrenome", "value": "Domene" },
+        { "label": "Celular", "value": "11997953111" },
+        { "label": "Estado civil", "value": "Solteiro(a)" },
+        { "label": "Data de Nascimento", "value": "1992-10-11T03:00:00.000Z" },
+        { "label": "Profissão", "value": "Desenvolvedor" },
+        { "label": "Cidade", "value": "Cotia" },
+        { "label": "País", "value": "Brasil" },
+        { "label": "Estado", "value": "São Paulo" },
+        { "label": "CEP", "value": "06709240" },
+        { "label": "Endereço", "value": "Estrada do Layher" },
+        { "label": "Complemento", "value": "Casa" },
+        { "label": "Número do comprovante IR", "value": "3216549876543216" },
+        { "label": "RG", "value": "37879193x" },
+        { "label": "RG Emissão", "value": "SSP" },
+        {
+            "label": "Comp. de Residência",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        },
+        {
+            "label": "Documento (frontal)",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        },
+        {
+            "label": "Documento (verso)",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        },
+        {
+            "label": "Selfie com doc. aberto",
+            "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+        }]
+      }
+  },
+  "legal": {
+      "shouldPass": {
+        "user": {
+            "term": true,
+            "email": "diogo.domene@netlolo.com",
+            "emailConfirm": "diogo.domene@netlolo.com",
+            "username": "diogo.domene@netlolo.com",
+            "password": "Pcldmf8*",
+            "passwordConfirm": "Pcldmf8*",
+            "cnpj": "27932182000195",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [
+          { "label": "RazaoSocial", "value": "Razão Social"},
+          { "label": "NomeFantasia", "value": "Nome Fantasia" },
+          { "label": "Cidade", "value": "Cotia" },
+          { "label": "Estado", "value": "São Paulo" },
+          { "label": "CEP", "value": "06709240" },
+          { "label": "Endereço", "value": "Estrada do Layher" },
+          { "label": "Complemento", "value": "Casa" },
+          { "label": "contactName", "value": "Nome" },
+          { "label": "contactEmail", "value": "contact@contact.com" },
+          { "label": "contactPhone", "value": "11997953111" },
+          { "label": "CEP-SOCIO", "value": "06709240" },
+          { "label": "CPF-SOCIO", "value": "01135820805" },
+          { "label": "Cidade-SOCIO", "value": "São Paulo" },
+          { "label": "Estado-SOCIO", "value": "SP" },
+          { "label": "Complemento-SOCIO", "value": "Casa" },
+          { "label": "Endereço-SOCIO", "value": "Estrada do Layher" },
+          { "label": "Telefone-SOCIO", "value": "11997953111" },
+          { "label": "Estado Civil-SOCIO", "value": "Solteiro(a)" },
+          { "label": "Profissão-SOCIO", "value": "Atriz" },
+          { "label": "RG-SOCIO", "value": "37879193x" },
+          { "label": "Orgão emissor-SOCIO", "value": "SSP" },
+          { "label": "Email-SOCIO", "value": "socio@socio.com" },
+          { "label": "Nascimento-SOCIO", "value": "1992-10-11T03:00:00.000Z" },
+          { "label": "Nome-SOCIO", "value": "Socio" },
+          { "label": "Sobre Nome-SOCIO", "value": "Socio" },
+          {
+              "label": "Contrato Social",
+              "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+          },
+          {
+              "label": "Documento (frontal)",
+              "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+          },
+          {
+              "label": "Documento (verso)",
+              "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+          },
+          {
+              "label": "Alteracao Contrato",
+              "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+          },
+          {
+              "label": "Selfie do Sócio-proprietário",
+              "value": "https://exchangepex.s3.us-east-2.amazonaws.com/light-coin-logo.jpg_-LEVMaISBMdI8fEnzG8t_1528489008562"
+          }]
+      }
+  }
+}
