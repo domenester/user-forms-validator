@@ -107,6 +107,22 @@
             "value": "Cotia"
         }]        
     },
+    "emailWithUppercase": {
+        "user": {
+            "term": true,
+            "email": "Diogo.domenenetlolo.com",
+            "emailConfirm": "Diogo.domene@netlolo.com",
+            "username": "Diogo.domene@netlolo.com",
+            "password": "Pcldmf8*",
+            "passwordConfirm": "Pcldmf8*",
+            "cpf": "35917211825",
+            "createdAt": "2017-10-11T03:00:00.000Z"
+        },
+        "profile": [{
+            "label": "Cidade",
+            "value": "Cotia"
+        }]        
+    },
     "emailConfirmInvalid": {
         "user": {
             "term": true,

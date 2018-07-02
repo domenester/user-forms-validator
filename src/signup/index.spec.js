@@ -46,6 +46,11 @@ test('should throw error when email is not valid', (t) => {
     return signUpTester.shouldThrowError(t, body, 'E-mail inválido');
 });
 
+test('should throw error when email has uppercase letter', (t) => {
+    const body = mocks.emailWithUppercase;
+    return signUpTester.shouldThrowError(t, body, 'E-mail inválido');
+});
+
 test('should throw error when emailConfirm is different', (t) => {
     const body = mocks.emailConfirmInvalid;
     return signUpTester.shouldThrowError(t, body, 'Os email não são iguais!');

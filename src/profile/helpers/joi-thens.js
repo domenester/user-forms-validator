@@ -63,10 +63,11 @@ module.exports = {
         return err;
     }),
     country: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo País'; return err; }),
-    email: Joi.string().email().required().error((err) => {
-        err[0].message = 'E-mail inválido';
-        return err;
-    }),
+    email: Joi.string().lowercase().email().required()
+        .error((err) => {
+            err[0].message = 'E-mail inválido';
+            return err;
+        }),
     linkValidation: message => Joi.string().uri().error((err) => {
         err[0].message = message;
         return err;
