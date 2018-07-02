@@ -79,6 +79,15 @@ class AdminCreateUserEnum {
                         },
                     }),
                 },
+                INPUT_ADDRESS_COMPLEMENT: {
+                    ...this.inputData('Complemento', 'text', 'input', 'addressComplement', index++, 'INPUT_ADDRESS_COMPLEMENT', true),
+                    ...this.extraData({
+                        length: {
+                            min: 2,
+                            max: 150,
+                        },
+                    }),
+                },
             };
 
             if (cb) userEnum = { ...userEnum, ...cb(index++) };
@@ -308,15 +317,6 @@ class AdminCreateUserEnum {
             INPUT_COUNTRY: {
                 ...this.inputData('País', 'text', 'input', 'country', index++, 'INPUT_COUNTRY', false),
             },
-            INPUT_ADDRESS_COMPLEMENT: {
-                ...this.inputData('Complemento', 'text', 'input', 'addressComplement', index++, 'INPUT_ADDRESS_COMPLEMENT', true),
-                ...this.extraData({
-                    length: {
-                        min: 2,
-                        max: 150,
-                    },
-                }),
-            },
             INPUT_PHONE: {
                 ...this.inputData('Telefone', 'text', 'input', 'cellphone', index++, 'INPUT_PHONE', true),
                 ...this.extraData({
@@ -422,7 +422,7 @@ class AdminCreateUserEnum {
                 }),
             },
             INPUT_NAME_CONTACT: {
-                ...this.inputData('Nome do Contato', 'text', 'input', 'name', index++, 'INPUT_NAME_CONTACT', true),
+                ...this.inputData('Nome do Contato', 'text', 'input', 'contactName', index++, 'INPUT_NAME_CONTACT', true),
                 ...this.extraData({
                     length: {
                         min: 2,
@@ -432,14 +432,14 @@ class AdminCreateUserEnum {
                 }),
             },
             INPUT_EMAIL_CONTACT: {
-                ...this.inputData('E-mail do Contato', 'text', 'input', 'email', index++, 'INPUT_EMAIL', true),
+                ...this.inputData('E-mail do Contato', 'text', 'input', 'contactEmail', index++, 'INPUT_EMAIL', true),
                 ...this.extraData({
                     subType: 'email',
                     filter: 'contact',
                 }),
             },
             INPUT_PHONE_CONTACT: {
-                ...this.inputData('Telefone do Contato', 'text', 'input', 'cellphone', index++, 'INPUT_PHONE_PARTNER', true),
+                ...this.inputData('Telefone do Contato', 'text', 'input', 'contactPhone', index++, 'INPUT_PHONE_PARTNER', true),
                 ...this.extraData({
                     subType: 'phone',
                     filter: 'contact',
