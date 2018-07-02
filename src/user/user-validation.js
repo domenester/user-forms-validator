@@ -2,16 +2,14 @@
 
 import Joi from 'joi';
 import DocumentValidation from './helper/joi-custom/cpfcnpj';
+import thens from '../profile/helpers/joi-thens';
 
 module.exports = Joi.object().keys({
     term: Joi.boolean().required().valid(true).error((err) => {
         err[0].message = 'O termo de uso precisa estar checado';
         return err;
     }),
-    email: Joi.string().email().required().error((err) => {
-        err[0].message = 'E-mail inválido';
-        return err;
-    }),
+    email: thens.email,
     emailConfirm: Joi.string().email().valid(Joi.ref('email')).required()
         .error((err) => {
             err[0].message = 'Os email não são iguais!';
