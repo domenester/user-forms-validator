@@ -35,8 +35,8 @@ module.exports = {
         err[0].message = 'Profissão inválida';
         return err;
     }),
-    rg: Joi.string().min(9).error((err) => {
-        if (err[0].type === 'string.min') err[0].message = 'RG invalido, mínimo de 9 caracteres!';
+    rg: Joi.string().min(7).error((err) => {
+        if (err[0].type === 'string.min') err[0].message = 'RG invalido, mínimo de 7 caracteres!';
         else err[0].message = 'RG inválido';
         return err;
     }),

@@ -24,7 +24,7 @@ class Profile {
             occupationPartner: { is: 'Profissão-SOCIO', then: thens.occupation },
             incomeTax: {
                 is: 'Número do comprovante IR',
-                then: Joi.string().error((err) => {
+                then: Joi.string().allow('').optional().error((err) => {
                     err[0].message = 'Número do comprovante de IR inválido';
                     return err;
                 }),
