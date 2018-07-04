@@ -11,10 +11,9 @@ module.exports = {
         }),
     city: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Cidade'; return err; }),
     state: Joi.string().required().error((err) => { err[0].message = 'Preencha o campo Estado'; return err; }),
-    addressComplement: Joi.string().max(150).min(2)
+    addressComplement: Joi.string().allow('').optional().max(150)
         .error((err) => {
             if (err[0].type === 'string.max') err[0].message = 'Endereço invalido, maxímo 150 caracteres!';
-            if (err[0].type === 'string.min') err[0].message = 'Endereço invalido, mínimo de 2 caracteres!';
             return err;
         }),
     address: Joi.string().max(150).min(2)

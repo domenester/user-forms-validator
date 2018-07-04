@@ -80,7 +80,7 @@ class AdminCreateUserEnum {
                     }),
                 },
                 INPUT_ADDRESS_COMPLEMENT: {
-                    ...this.inputData('Complemento', 'text', 'input', 'addressComplement', index++, 'INPUT_ADDRESS_COMPLEMENT', true),
+                    ...this.inputData('Complemento', 'text', 'input', 'addressComplement', index++, 'INPUT_ADDRESS_COMPLEMENT'),
                     ...this.extraData({
                         length: {
                             min: 2,
@@ -240,7 +240,7 @@ class AdminCreateUserEnum {
                 }),
             },
             INPUT_ADDRESS_COMPLEMENT_PARTNER: {
-                ...this.inputData('Complemento do Sócio', 'text', 'input', 'addressComplementPartner', index++, 'INPUT_ADDRESS_COMPLEMENT_PARTNER', true),
+                ...this.inputData('Complemento do Sócio', 'text', 'input', 'addressComplementPartner', index++, 'INPUT_ADDRESS_COMPLEMENT_PARTNER'),
                 ...this.extraData({
                     length: {
                         min: 2,
