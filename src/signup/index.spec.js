@@ -128,9 +128,9 @@ test('should throw error when cnpj is invalid', (t) => {
     return signUpTester.shouldThrowError(t, body, 'CNPJ inválido');
 });
 
-test('should throw error when social reason length is over 40', (t) => {
+test('should throw error when social reason length is over 255', (t) => {
     const body = mocks.socialReasonOver40;
-    return signUpTester.shouldThrowError(t, body, 'O campo Razão Social precisa ter no máximo 40 caracteres!');
+    return signUpTester.shouldThrowError(t, body, 'O campo Razão Social precisa ter no máximo 255 caracteres!');
 });
 
 test('should throw error when social reason is empty', (t) => {

@@ -143,43 +143,12 @@ class ProfileEnum {
                 ...this.inputData('RG do Sócio', 'text', 'input', 'rgPartner', index++, 'INPUT_RG_PARTNER', true),
                 ...this.extraData({
                     subType: 'rg',
+                    mask: '[/[1-9]/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'-\', /[a-z0-9]/]',
                     filter: 'partner',
                 }),
             },
             INPUT_RG_EMISSION_PARTNER: {
-                ...this.inputData('Órgão Emissor do Sócio', 'text', 'combobox', 'rgEmissionPartner', index++, 'INPUT_RG_EMISSION_PARTNER', true),
-                ...this.extraData({
-                    itens: [
-                        { label: 'AC', value: 'AC' },
-                        { label: 'AL', value: 'AL' },
-                        { label: 'AP', value: 'AP' },
-                        { label: 'AM', value: 'AM' },
-                        { label: 'BA', value: 'BA' },
-                        { label: 'CE', value: 'CE' },
-                        { label: 'DF', value: 'DF' },
-                        { label: 'ES', value: 'ES' },
-                        { label: 'GO', value: 'GO' },
-                        { label: 'MA', value: 'MA' },
-                        { label: 'MT', value: 'MT' },
-                        { label: 'MS', value: 'MS' },
-                        { label: 'MG', value: 'MG' },
-                        { label: 'PA', value: 'PA' },
-                        { label: 'PB', value: 'PB' },
-                        { label: 'PR', value: 'PR' },
-                        { label: 'PE', value: 'PE' },
-                        { label: 'PI', value: 'PI' },
-                        { label: 'RJ', value: 'RJ' },
-                        { label: 'RN', value: 'RN' },
-                        { label: 'RS', value: 'RS' },
-                        { label: 'RO', value: 'RO' },
-                        { label: 'RR', value: 'RR' },
-                        { label: 'SC', value: 'SC' },
-                        { label: 'SP', value: 'SP' },
-                        { label: 'SE', value: 'SE' },
-                        { label: 'TO', value: 'TO' },
-                    ],
-                    filter: 'partner',
-                }),
+                ...this.inputData('Órgão Emissor do Sócio', 'text', 'input', 'rgEmissionPartner', index++, 'INPUT_RG_EMISSION_PARTNER', true),
             },
             INPUT_OCCUPATION_PARTNER: {
                 ...this.inputData('Profissão do Sócio', 'text', 'input', 'occupationPartner', index++, 'INPUT_OCCUPATION_PARTNER', true),
@@ -204,6 +173,7 @@ class ProfileEnum {
                 ...this.inputData('Telefone do Sócio', 'text', 'input', 'cellphonePartner', index++, 'INPUT_PHONE_PARTNER', true),
                 ...this.extraData({
                     subType: 'phone',
+                    mask: '[\'(\', /[1-9]/, /\\d/, \')\', \' \', /[2-9]/, /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/, /\\d/, /\\d/, /\\d/]',
                     filter: 'partner',
                 }),
             },
@@ -321,12 +291,14 @@ class ProfileEnum {
                 ...this.inputData('Telefone', 'text', 'input', 'cellphone', index++, 'INPUT_PHONE', true),
                 ...this.extraData({
                     subType: 'phone',
+                    mask: '[\'(\', /[1-9]/, /\\d/, \')\', \' \', /[2-9]/, /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/, /\\d/, /\\d/, /\\d/]',
                 }),
             },
             INPUT_RG: {
                 ...this.inputData('RG', 'text', 'input', 'rg', index++, 'INPUT_RG', true),
                 ...this.extraData({
                     subType: 'rg',
+                    mask: '[/[1-9]/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'.\', /\\d/, /\\d/, /\\d/, \'-\', /[a-z0-9]/]',
                 }),
             },
             INPUT_RG_EMISSION: {
@@ -371,7 +343,7 @@ class ProfileEnum {
                 ...this.inputData('Razão Social', 'text', 'input', 'socialReason', index++, 'INPUT_SOCIAL_REASON', true),
                 ...this.extraData({
                     length: {
-                        max: 40,
+                        max: 255,
                     },
                 }),
             },
@@ -411,6 +383,7 @@ class ProfileEnum {
                 ...this.inputData('Telefone do Contato', 'text', 'input', 'contactPhone', index++, 'INPUT_PHONE_PARTNER', true),
                 ...this.extraData({
                     subType: 'phone',
+                    mask: '[\'(\', /[1-9]/, /\\d/, \')\', \' \', /[2-9]/, /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/, /\\d/, /\\d/, /\\d/]',
                     filter: 'contact',
                 }),
             },

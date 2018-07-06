@@ -53,8 +53,8 @@ class Profile {
             country: { is: 'País', then: thens.country },
             socialReason: {
                 is: 'RazaoSocial',
-                then: Joi.string().required().max(40).error((err) => {
-                    if (err[0].type === 'string.max') err[0].message = 'O campo Razão Social precisa ter no máximo 40 caracteres!';
+                then: Joi.string().required().max(255).error((err) => {
+                    if (err[0].type === 'string.max') err[0].message = 'O campo Razão Social precisa ter no máximo 255 caracteres!';
                     else if (err[0].type === 'any.empty') err[0].message = 'Preencha o campo Razão Social';
                     return err;
                 }),
