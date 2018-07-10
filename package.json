@@ -1,7 +1,7 @@
 {
-  "name": "zater-forms-validator",
+  "name": "user-forms-validator",
   "version": "1.6.7",
-  "description": "A package to validate zater projects input and output",
+  "description": "A package to validate user forms input and output",
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run build && NODE_ENV=test ava --serial",
@@ -10,7 +10,7 @@
     "build": "npm run clean && babel src --out-dir dist --copy-files",
     "babel-debug": "babel-node index.js --debug"
   },
-  "author": "Zater",
+  "author": "Diogo Domene",
   "license": "ISC",
   "devDependencies": {
     "ava": "^0.25.0",
